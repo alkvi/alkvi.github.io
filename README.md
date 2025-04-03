@@ -1,3 +1,3 @@
 # Personal site
 
-Personal site using [Al-folio](https://github.com/alshedivat/al-folio).
+Personal site built with [al-folio](https://github.com/alshedivat/al-folio).
