@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-data-to-manuscript-with-quarto",
+        },{id: "post-writing-in-markdown-with-obsidian-pandoc-and-zotero",
+        
+          title: "Writing in Markdown with Obsidian, Pandoc and Zotero",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/obsidian-pandoc-zotero/";
+          
+        },
+      },{id: "post-data-to-manuscript-with-quarto",
         
           title: "Data to manuscript with Quarto",
         
