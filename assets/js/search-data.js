@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{
+        },{id: "post-data-to-manuscript-with-quarto",
+        
+          title: "Data to manuscript with Quarto",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/data_to_publication/";
+          
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
