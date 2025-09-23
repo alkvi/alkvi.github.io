@@ -2,7 +2,7 @@
 layout: post
 title: "Data to manuscript with Quarto"
 date: 2025-09-23
-categories: [blog]
+categories: [blog, posts]
 tags: [jekyll, al-folio, tutorial]
 ---
 
