@@ -1,3 +1,11 @@
+---
+layout: post
+title: "Data to manuscript with Quarto"
+date: 2025-09-23
+categories: [blog]
+tags: [jekyll, al-folio, tutorial]
+---
+
 # Data to manuscript with Quarto
 
 I am a big fan of transparency when it comes academic writing, even though I don't always fully achieve it myself.
