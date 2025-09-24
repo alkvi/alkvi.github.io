@@ -14,4 +14,8 @@ Currently the spot for my favorite editor goes to [Obsidian](https://obsidian.md
 
 # Pandoc handles everything
 
+To be added.
+
 # Zotero integration
+
+To be added.
