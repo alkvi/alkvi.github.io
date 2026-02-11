@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-writing-in-markdown-with-obsidian-pandoc-and-zotero",
+        },{id: "post-academic-writing-in-markdown-with-obsidian-pandoc-and-zotero",
         
-          title: "Writing in Markdown with Obsidian, Pandoc and Zotero",
+          title: "Academic writing in Markdown with Obsidian, Pandoc and Zotero",
         
         description: "",
         section: "Posts",
