@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: 
+description:
 nav: true
 nav_order: 6
 ---
@@ -13,7 +13,7 @@ I am involved in running practical lab demonstrations for movement analysis educ
 
 # fNIRS course
 
-Our research group runs an fNIRS course on doctoral level which I am involved in, *H1F6004, Imaging in Neuroscience: with a Focus on Functional Near Infrared Spectroscopy*.
+Our research group runs an fNIRS course on doctoral level which I am involved in, _H1F6004, Imaging in Neuroscience: with a Focus on Functional Near Infrared Spectroscopy_.
 
 # Workshop
 

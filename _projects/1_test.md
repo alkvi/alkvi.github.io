@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data to manuscript with Quarto"
+title: "Test"
 date: 2025-09-23
 categories: [blog, posts]
 tags: [writing, quarto, markdown, pandoc]
@@ -25,13 +25,6 @@ The following is from an example study where I present a simple demographics tab
 ![Collapsed code blocks](assets/img/quarto_example_1.jpg)
 
 {% include figure.liquid loading="eager" path="assets/img/quarto_example_1.jpg" title="Code block" class="img-fluid rounded z-depth-1" %}
-
-<div class="row justify-content-center mt-3">
-	{% include figure.html path="assets/img/quarto_example_1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-</div>
-<div class="caption">
-	Collapsed code blocks
-</div>
 
 [![Collapsed code blocks]({{ '/assets/img/quarto_example_1.jpg' | prepend: site.baseurl | prepend: site.url }}){:.postimage.one.right}][]
 

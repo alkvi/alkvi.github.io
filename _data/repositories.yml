@@ -4,5 +4,5 @@ github_users:
 repo_description_lines_max: 2
 
 github_repos:
-  - alkvi/mni-152-3d-template 
-  - alkvi/fnirs_stroop_study 
+  - alkvi/mni-152-3d-template
+  - alkvi/fnirs_stroop_study
