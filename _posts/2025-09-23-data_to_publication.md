@@ -44,6 +44,11 @@ How about getting input from your co-authors? Can you escape the ever-present Wo
 
 Maybe. The most workable solution I have found is [Hypothes.is](https://web.hypothes.is/), allowing highlighting and markup of any webpage, as well as private invite-only groups. Here's an example of a comment on a bit of text, similar to adding a comment in Word:
 
-![Example hypothes.is annotation](/assets/img/hypothesis_weblet_example.jpg)
+<div class="row justify-content-center mt-3">
+	{% include figure.liquid loading="eager" path="assets/img/hypothesis_weblet_example.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    Example hypothes.is annotation
+</div>
 
 Of course, this still requires your co-authors to register an account. I was considering comments in a GitHub pull request, perhaps an issues page, but haven't really come across anything spot-on. If you have any better ideas, I would love to hear it.
