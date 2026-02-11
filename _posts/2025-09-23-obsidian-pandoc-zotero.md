@@ -75,7 +75,7 @@ To convert your Markdown file into, for example, docx you would use a command as
 pandoc input.md --output=document.docx --bibliography=references.bib --citeproc
 ```
 
-or, for HMTL:
+or, for HTML:
 
 ```
 pandoc input.md --output=document.html --bibliography=references.bib --citeproc
