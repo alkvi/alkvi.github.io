@@ -12,7 +12,7 @@ I am a big fan of transparency when it comes academic writing, even though I don
 
 With modern tooling, it is (in my opinion) possible to go from raw data to finished manuscript in one single file. Enter [Quarto](https://quarto.org/). This is an open-source interactive development environment (similar to [Jupyter notebooks](https://jupyter.org/)) and publishing system, supporting both Python and R, as well as a few other languages.
 
-You author your manuscript in [markdown](https://www.markdownguide.org/) blocks, add code blocks in whatever flavor of language you prefer, and generate any table or figure right there in your Quarto file from raw data. It is also build on the extremely powerful [Pandoc](https://pandoc.org/index.html), a central tool in my academic workflows.
+You author your manuscript in [markdown](https://www.markdownguide.org/) blocks, add code blocks in whatever flavor of language you prefer, and generate any table or figure right there in your Quarto file from raw data. It is also built on the extremely powerful [Pandoc](https://pandoc.org/index.html), a central tool in my academic workflows.
 
 # Not only for manuscripts
 
