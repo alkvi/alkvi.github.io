@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: page
 title: "Test"
 date: 2025-09-23
-categories: [blog, posts]
+category: work
 tags: [writing, quarto, markdown, pandoc]
 ---
 
