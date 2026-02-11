@@ -66,12 +66,7 @@ ninja.data = [{
             window.location.href = "/blog/2025/data_to_publication/";
           
         },
-      },{id: "projects-test",
-          title: 'Test',
-          description: "",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_test/";
-            },},{
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
