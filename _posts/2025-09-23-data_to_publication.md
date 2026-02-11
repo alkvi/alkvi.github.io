@@ -27,7 +27,7 @@ The following is from an example study where I present a simple demographics tab
 {% include figure.liquid loading="eager" path="assets/img/quarto_example_1.jpg" title="Code block" class="img-fluid rounded z-depth-1" %}
 
 <div class="row justify-content-center mt-3">
-	{% include figure.html path="assets/img/quarto_example_1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+	{% include figure.liquid loading="eager" path="assets/img/quarto_example_1.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>
 <div class="caption">
 	Collapsed code blocks
