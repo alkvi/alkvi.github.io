@@ -252,7 +252,7 @@ quadrantChart
 In any rendering software that supports Mermaid, the resulting chart would look something like:
 
 <div class="row justify-content-center mt-3">
-	{% include figure.liquid loading="eager" path="assets/img/mermaid_quadrant.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+	{% include figure.liquid loading="eager" path="assets/img/mermaid_quadrant.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>
 <div class="caption">
     Mermaid diagram
