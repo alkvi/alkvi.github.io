@@ -44,6 +44,68 @@ docx:
 title: "My Document"
 bibliography: references.bib
 ---
-</code></pre></div></div> <h1 id="other-tips-and-tricks">Other tips and tricks</h1> <p>Acronyms</p> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/data_to_publication/">Data to manuscript with Quarto</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 alkvi . Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+</code></pre></div></div> <p>Add a references heading at the end of the document and processed references will be placed there.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># References
+</code></pre></div></div> <p>To select citation style, point to a <a href="https://citationstyles.org/" rel="external nofollow noopener" target="_blank">Citation Style Language (CSL) file</a> in the preamble. For example, using APA formatting:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: "My Document"
+output:
+  latex:
+    output: document.tex
+    pdf-engine: lualatex
+    bibliography: references.bib
+    csl: apa.csl
+---
+</code></pre></div></div> <h1 id="other-useful-features">Other useful features</h1> <h2 id="acronyms">Acronyms</h2> <p>When authoring long documents using abbreviations, it can be tricky to keep track of where an abbreviations was first introduced, and take care to not re-introduce them. This can be solved by packages like <a href="kprussing.github.io/pandoc-acro/">pandoc-acro</a> or <a href="https://gitlab.com/mirkoboehm/pandoc-acronyms" rel="external nofollow noopener" target="_blank">pandoc-acronyms</a>, which are based on <a href="https://pandoc.org/filters.html" rel="external nofollow noopener" target="_blank">Pandoc filters</a>.</p> <p>In pandoc-acro, an acronym is prepended with a plus sign (+), and an acronym definition list is defined in the document preamble.</p> <p>Text:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Studies using +PET, +SPECT, and +EEG have found evidence of ...
+
+Specifically, an +EEG study found that ...
+</code></pre></div></div> <p>Preamble:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: "My Document"
+output:
+  latex:
+    output: document.tex
+    pdf-engine: lualatex
+    bibliography: references.bib
+    csl: apa.csl
+    filter:
+          - pandoc-acro
+acronyms:
+  PET:
+    short: PET
+    long: positron emission tomography
+  SPECT:
+    short: SPECT
+    long: single-photon emission computed tomography
+  EEG:
+    short: EEG
+    long: electroencephalography
+---
+</code></pre></div></div> <p>This will produce the following text:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Studies using positron emission tomography (PET), single-photon emission computed tomography (SPECT), and electroencephalography (EEG) have found evidence of ...
+
+Specifically, an EEG study found that ...
+</code></pre></div></div> <p>No need to keep track of where an abbreviation is used. When converting a file to <code class="language-plaintext highlighter-rouge">.tex</code> format, appropriate LaTeX acronym commands will be created, such as <code class="language-plaintext highlighter-rouge">\ac{EEG}</code>.</p> <h2 id="filters">Filters</h2> <p><a href="https://pandoc.org/filters.html" rel="external nofollow noopener" target="_blank">Pandoc filters</a> can be a powerful tool. For example, I have image assets inside my Obsidian storage folder under <code class="language-plaintext highlighter-rouge">img/</code>, but if I’m working in a LaTeX template with predefined asset paths, I would need to replace these paths to, for example, <code class="language-plaintext highlighter-rouge">includes/figures</code>. A custom filter can process the document and do this automatically. For example:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function Image(img)
+  local new, n = img.src:gsub("^%.%.%/img/", "includes/figures/")
+  if n &gt; 0 then
+    img.src = new
+  end
+  return img
+end
+</code></pre></div></div> <p>This can be saved to a <code class="language-plaintext highlighter-rouge">.lua</code> file, for example <code class="language-plaintext highlighter-rouge">custom_filter.lua</code> and be added like any other filter.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>filter:
+      - pandoc-acro
+      - custom_filter
+</code></pre></div></div> <h2 id="diagrams">Diagrams</h2> <p>To produce simple diagrams, there is no need to even leave the Markdown environment. Many Markdown environments support <a href="https://mermaid.js.org/" rel="external nofollow noopener" target="_blank">Mermaid</a>, which is a language for producing graphs and diagrams.</p> <pre><code class="language-mermaid">quadrantChart
+    title Interference effects
+    x-axis Motor
+    y-axis Cognitive
+    quadrant-1 Mutual facilitation
+    quadrant-2 Motor priority
+    quadrant-3 Mutual interference
+    quadrant-4 Cognitive priority
+    P1: [0.31, 0.68]
+    P2: [0.33, 0.11]
+    P3: [0.48, 0.19]
+    P4: [0.87, 0.65]
+    P5: [0.31, 0.14]
+    P6: [0.30, 0.75]
+    P7: [0.68, 0.09]
+</code></pre> <p>In any rendering software that supports Mermaid, the resulting chart would look something like:</p> <div class="row justify-content-center mt-3"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/mermaid_quadrant-480.webp 480w,/assets/img/mermaid_quadrant-800.webp 800w,/assets/img/mermaid_quadrant-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/mermaid_quadrant.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> <div class="caption"> Mermaid diagram </div> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/data_to_publication/">Data to manuscript with Quarto</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 alkvi . Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
     addBackToTop();
   </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
