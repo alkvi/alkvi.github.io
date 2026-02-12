@@ -133,6 +133,127 @@ bibliography: references.bib
 ---
 ```
 
-# Other tips and tricks
+Add a references heading at the end of the document and processed references will be placed there.
 
-Acronyms
+```
+# References
+```
+
+To select citation style, point to a [Citation Style Language (CSL) file](https://citationstyles.org/) in the preamble. For example, using APA formatting:
+
+```
+---
+title: "My Document"
+output:
+  latex:
+    output: document.tex
+    pdf-engine: lualatex
+    bibliography: references.bib
+    csl: apa.csl
+---
+```
+
+# Other useful features
+
+## Acronyms
+
+When authoring long documents using abbreviations, it can be tricky to keep track of where an abbreviations was first introduced, and take care to not re-introduce them. This can be solved by packages like [pandoc-acro](kprussing.github.io/pandoc-acro/) or [pandoc-acronyms](https://gitlab.com/mirkoboehm/pandoc-acronyms), which are based on [Pandoc filters](https://pandoc.org/filters.html).
+
+In pandoc-acro, an acronym is prepended with a plus sign (+), and an acronym definition list is defined in the document preamble.
+
+Text:
+
+```
+Studies using +PET, +SPECT, and +EEG have found evidence of ...
+
+Specifically, an +EEG study found that ...
+```
+
+Preamble:
+
+```
+---
+title: "My Document"
+output:
+  latex:
+    output: document.tex
+    pdf-engine: lualatex
+    bibliography: references.bib
+    csl: apa.csl
+    filter:
+          - pandoc-acro
+acronyms:
+  PET:
+    short: PET
+    long: positron emission tomography
+  SPECT:
+    short: SPECT
+    long: single-photon emission computed tomography
+  EEG:
+    short: EEG
+    long: electroencephalography
+---
+```
+
+This will produce the following text:
+
+```
+Studies using positron emission tomography (PET), single-photon emission computed tomography (SPECT), and electroencephalography (EEG) have found evidence of ...
+
+Specifically, an EEG study found that ...
+```
+
+No need to keep track of where an abbreviation is used. When converting a file to `.tex` format, appropriate LaTeX acronym commands will be created, such as `\ac{EEG}`.
+
+## Filters
+
+[Pandoc filters](https://pandoc.org/filters.html) can be a powerful tool. For example, I have image assets inside my Obsidian storage folder under `img/`, but if I'm working in a LaTeX template with predefined asset paths, I would need to replace these paths to, for example, `includes/figures`. A custom filter can process the document and do this automatically. For example:
+
+```
+function Image(img)
+  local new, n = img.src:gsub("^%.%.%/img/", "includes/figures/")
+  if n > 0 then
+    img.src = new
+  end
+  return img
+end
+```
+
+This can be saved to a `.lua` file, for example `custom_filter.lua` and be added like any other filter.
+
+```
+filter:
+      - pandoc-acro
+      - custom_filter
+```
+
+## Diagrams
+
+To produce simple diagrams, there is no need to even leave the Markdown environment. Many Markdown environments support [Mermaid](https://mermaid.js.org/), which is a language for producing graphs and diagrams.
+
+```mermaid
+quadrantChart
+    title Interference effects
+    x-axis Motor
+    y-axis Cognitive
+    quadrant-1 Mutual facilitation
+    quadrant-2 Motor priority
+    quadrant-3 Mutual interference
+    quadrant-4 Cognitive priority
+    P1: [0.31, 0.68]
+    P2: [0.33, 0.11]
+    P3: [0.48, 0.19]
+    P4: [0.87, 0.65]
+    P5: [0.31, 0.14]
+    P6: [0.30, 0.75]
+    P7: [0.68, 0.09]
+```
+
+In any rendering software that supports Mermaid, the resulting chart would look something like:
+
+<div class="row justify-content-center mt-3">
+	{% include figure.liquid loading="eager" path="assets/img/mermaid_quadrant.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+</div>
+<div class="caption">
+    Mermaid diagram
+</div>
